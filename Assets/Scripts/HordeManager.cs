@@ -25,9 +25,9 @@ public class HordeManager : MonoBehaviour
 
     void CardSelection()
     {
-        int cardToPlay = Random.Range(1, 26);
+        int cardToPlay = Random.Range(1, 100);
 
-        if (cardToPlay == 26)
+        if (cardToPlay >= 26)
         {
             Tokens.numberOfTokens++;
             CardSelection();
