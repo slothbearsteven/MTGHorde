@@ -8,6 +8,8 @@ public class HordeManager : MonoBehaviour
 {
     public static int hordeDeckCurrentAmount;
     public GameObject[] hordeCards;
+
+    private List<int> cardsPlayed = new List<int>();
     private int hordeDeckTotal = 100;
 
 
@@ -33,8 +35,18 @@ public class HordeManager : MonoBehaviour
             CardSelection();
         }
         else
+
         {
-            hordeCards[cardToPlay].SetActive(true);
+            if (!cardsPlayed.Contains(cardToPlay))
+            {
+                hordeCards[cardToPlay].SetActive(true);
+                cardsPlayed.Add(cardToPlay);
+            }
+            else
+            {
+                CardSelection();
+            }
+
         }
     }
 }
