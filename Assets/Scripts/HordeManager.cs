@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 
@@ -10,7 +11,14 @@ public class HordeManager : MonoBehaviour
     public GameObject[] hordeCards;
 
     private List<int> cardsPlayed = new List<int>();
+
     private int hordeDeckTotal = 100;
+    public Text hordeTotalText;
+
+    public static int graveyardNumber = 0;
+
+    public Text graveyardText;
+    public static int turnCount = 0;
 
 
     // Start is called before the first frame update
@@ -48,5 +56,10 @@ public class HordeManager : MonoBehaviour
             }
 
         }
+    }
+    void TurnEnd()
+    {
+        turnCount++;
+
     }
 }
